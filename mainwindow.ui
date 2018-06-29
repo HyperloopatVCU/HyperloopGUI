@@ -445,7 +445,7 @@ background-color: green;
 }</string>
       </property>
       <property name="text">
-       <string>Okay</string>
+       <string>Error</string>
       </property>
      </widget>
      <widget class="QLabel" name="frontLeft">
@@ -471,7 +471,7 @@ background-color: green;
 }</string>
       </property>
       <property name="text">
-       <string>Okay</string>
+       <string>Error</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_13">
@@ -497,7 +497,7 @@ background-color: green;
 }</string>
       </property>
       <property name="text">
-       <string>Okay</string>
+       <string>Error</string>
       </property>
      </widget>
      <widget class="QLabel" name="rearLeft">
@@ -523,7 +523,7 @@ background-color: green;
 }</string>
       </property>
       <property name="text">
-       <string>Okay</string>
+       <string>Error</string>
       </property>
      </widget>
      <widget class="QLabel" name="rearRight">
@@ -549,7 +549,7 @@ background-color: green;
 }</string>
       </property>
       <property name="text">
-       <string>Okay</string>
+       <string>Error</string>
       </property>
      </widget>
      <widget class="QLabel" name="rearRightVPS">
