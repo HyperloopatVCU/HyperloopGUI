@@ -1,0 +1,1606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1700</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:black;
+QLabel[activated=true] {
+	background-color:green;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="label">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>271</width>
+      <height>64</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../../Program Files/Hyperloop/Hyperloop_Logo.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>30</y>
+      <width>788</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QProgressBar {
+	border-top:12.5px solid #372D2C;
+	border-bottom:12px solid #372D2C;
+    background-color: white;
+	border-left: 0px;
+	border-right:0px;
+ }
+
+ QProgressBar::chunk {
+    background: qlineargradient( x1:0 y1:0, x2:1 y2:0, stop:0 lightgreen, stop:1 green);
+ }</string>
+    </property>
+    <property name="value">
+     <number>100</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>43</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:red;
+border-radius:7px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>43</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:red;
+border-radius:7px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_2">
+    <property name="geometry">
+     <rect>
+      <x>1108</x>
+      <y>30</y>
+      <width>250</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QProgressBar {
+	border-top:12.5px solid #372D2C;
+	border-bottom:12.5px solid #372D2C;
+    background-color: white;
+	border-left: 0px;
+	border-right:0px;
+ }
+
+ QProgressBar::chunk {
+    background: qlineargradient( x1:0 y1:0, x2:1 y2:0, stop:0 yellow, stop:1 red);
+ }</string>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>43</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:red;
+border-radius:7px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_3">
+    <property name="geometry">
+     <rect>
+      <x>1358</x>
+      <y>30</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QProgressBar {
+	border-top:12.5px solid #372D2C;
+	border-bottom:12.5px solid #372D2C;
+    background-color: white;
+	border-left: 0px;
+	border-right:0px;
+ }
+
+ QProgressBar::chunk {
+    background: red;
+ }</string>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_4">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>43</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:red;
+border-radius:7px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_5">
+    <property name="geometry">
+     <rect>
+      <x>1350</x>
+      <y>43</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:red;
+border-radius:7px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frameMain">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>120</y>
+      <width>1620</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #343432;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="sensorSysFrame">
+     <property name="geometry">
+      <rect>
+       <x>547</x>
+       <y>30</y>
+       <width>519</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#707070;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>-100</x>
+        <y>22</y>
+        <width>521</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 40px;
+font-family:Impact;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+      </property>
+      <property name="text">
+       <string>Sensor Systems</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>-100</x>
+        <y>90</y>
+        <width>521</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 23px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+      </property>
+      <property name="text">
+       <string>Data Acquisition System</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>30</y>
+        <width>140</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 32px;
+font-family:Arial;
+font-weight: bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+      </property>
+      <property name="text">
+       <string>Status</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>-100</x>
+        <y>190</y>
+        <width>521</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 23px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+      </property>
+      <property name="text">
+       <string>Front-Right DAS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="frontRight">
+      <property name="geometry">
+       <rect>
+        <x>-100</x>
+        <y>140</y>
+        <width>521</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 23px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+      </property>
+      <property name="text">
+       <string>Front-Left DAS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="backLeft">
+      <property name="geometry">
+       <rect>
+        <x>-100</x>
+        <y>240</y>
+        <width>521</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 23px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+      </property>
+      <property name="text">
+       <string>Rear-Left DAS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="backRight">
+      <property name="geometry">
+       <rect>
+        <x>-100</x>
+        <y>290</y>
+        <width>521</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 23px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+      </property>
+      <property name="text">
+       <string>Rear-Right DAS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="dataAcq">
+      <property name="geometry">
+       <rect>
+        <x>335</x>
+        <y>90</y>
+        <width>150</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:red;
+qproperty-alignment: AlignCenter;
+border:2px solid black;
+QLabel[activated=true]{
+background-color: green;
+}</string>
+      </property>
+      <property name="text">
+       <string>Okay</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="frontLeft">
+      <property name="geometry">
+       <rect>
+        <x>335</x>
+        <y>140</y>
+        <width>150</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:red;
+qproperty-alignment: AlignCenter;
+border:2px solid black;
+QLabel[activated=true]{
+background-color: green;
+}</string>
+      </property>
+      <property name="text">
+       <string>Okay</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>335</x>
+        <y>190</y>
+        <width>150</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:red;
+qproperty-alignment: AlignCenter;
+border:2px solid black;
+QLabel[activated=true]{
+background-color: green;
+}</string>
+      </property>
+      <property name="text">
+       <string>Okay</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rearLeft">
+      <property name="geometry">
+       <rect>
+        <x>335</x>
+        <y>240</y>
+        <width>150</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:red;
+qproperty-alignment: AlignCenter;
+border:2px solid black;
+QLabel[activated=true]{
+background-color: green;
+}</string>
+      </property>
+      <property name="text">
+       <string>Okay</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rearRight">
+      <property name="geometry">
+       <rect>
+        <x>335</x>
+        <y>290</y>
+        <width>150</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:red;
+qproperty-alignment: AlignCenter;
+border:2px solid black;
+QLabel[activated=true]{
+background-color: green;
+}</string>
+      </property>
+      <property name="text">
+       <string>Okay</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rearRightVPS">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>340</y>
+        <width>391</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 23px;
+font-family:Monospace;
+font-weight:;
+color:red;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignLeft;
+QLabel[activated=true]{
+color:darkgreen;
+}</string>
+      </property>
+      <property name="text">
+       <string>Rear VPS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rearRightIMU">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>380</y>
+        <width>391</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 23px;
+font-family:Monospace;
+font-weight:;
+color:red;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignLeft;
+QLabel[activated=true]{
+color:darkgreen;
+}</string>
+      </property>
+      <property name="text">
+       <string>Rear-right IMU</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rearRightHPS">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>420</y>
+        <width>391</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 23px;
+font-family:Monospace;
+font-weight:;
+color:red;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignLeft;
+QLabel[activated=true]{
+color:darkgreen;
+}</string>
+      </property>
+      <property name="text">
+       <string>Rear-right HPS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ambientPressureSensor">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>460</y>
+        <width>391</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 23px;
+font-family:Monospace;
+font-weight:;
+color:red;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignLeft;
+QLabel[activated=true]{
+color:darkgreen;
+}</string>
+      </property>
+      <property name="text">
+       <string>Ambient Pressure Sensor</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="speedFrame">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>300</y>
+       <width>150</width>
+       <height>150</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#707070;
+border-radius:75px;
+border:2px solid black;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="speed">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>62</y>
+        <width>140</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 26px;
+font-family:Arial;
+font-weight: bold;
+color:white;
+background-color:hsla(0,0,0,0);
+border:0px;</string>
+      </property>
+      <property name="text">
+       <string>000.00 mph</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>270</y>
+       <width>150</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 17px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+     </property>
+     <property name="text">
+      <string>Current Speed</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>480</y>
+       <width>291</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+     </property>
+     <property name="text">
+      <string>High Pressure Pneumatic Guage</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>530</y>
+       <width>291</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+     </property>
+     <property name="text">
+      <string>Low Pressure Pneumatic Guage</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pneumaticHP">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>480</y>
+       <width>181</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:blue;
+qproperty-alignment: AlignCenter;
+border:2px solid black;</string>
+     </property>
+     <property name="text">
+      <string>200 psi</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pneumaticLP">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>530</y>
+       <width>181</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:blue;
+qproperty-alignment: AlignCenter;
+border:2px solid black;</string>
+     </property>
+     <property name="text">
+      <string>200 psi</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_45">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>291</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+     </property>
+     <property name="text">
+      <string>Battery Temperature</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_46">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>291</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+     </property>
+     <property name="text">
+      <string>Motor Temperature</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="motorTemp">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>140</y>
+       <width>201</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:blue;
+qproperty-alignment: AlignCenter;
+border:2px solid black;</string>
+     </property>
+     <property name="text">
+      <string>200 C</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="batteryTemp">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>80</y>
+       <width>201</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:blue;
+qproperty-alignment: AlignCenter;
+border:2px solid black;</string>
+     </property>
+     <property name="text">
+      <string>200 C</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_49">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>291</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+     </property>
+     <property name="text">
+      <string>Air Pressure</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="airPressure">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>200</y>
+       <width>201</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:blue;
+qproperty-alignment: AlignCenter;
+border:2px solid black;</string>
+     </property>
+     <property name="text">
+      <string>200 psi</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_51">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>10</y>
+       <width>131</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 25px;
+font-family:Impact;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+     </property>
+     <property name="text">
+      <string>Status</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="status">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>10</y>
+       <width>201</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+background-color:red;
+font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+qproperty-alignment: AlignCenter;
+border:2px solid black;
+}
+QLabel[activated=true]{
+background-color: green;
+}</string>
+     </property>
+     <property name="text">
+      <string>Stationary</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="stopButton">
+    <property name="geometry">
+     <rect>
+      <x>1420</x>
+      <y>720</y>
+      <width>161</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+border-radius:80px;
+background-color:red;
+font-size: 50px;
+font-family:Arial;
+font-weight: bold;
+border:2px solid #1f1f1f;</string>
+    </property>
+    <property name="text">
+     <string>STOP</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_56">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>810</y>
+      <width>291</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 25px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Latency</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="latency">
+    <property name="geometry">
+     <rect>
+      <x>1160</x>
+      <y>810</y>
+      <width>181</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:blue;
+qproperty-alignment: AlignCenter;
+border:4px solid gray;</string>
+    </property>
+    <property name="text">
+     <string>5ms</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bandwidth">
+    <property name="geometry">
+     <rect>
+      <x>1160</x>
+      <y>760</y>
+      <width>181</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:blue;
+qproperty-alignment: AlignCenter;
+border:4px solid gray;</string>
+    </property>
+    <property name="text">
+     <string>1 mB/s</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_54">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>760</y>
+      <width>291</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 25px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Bandwidth</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_57">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>830</y>
+      <width>291</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 25px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Current</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="current">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>820</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:green;
+qproperty-alignment: AlignCenter;
+border:4px solid #2f2f2f;</string>
+    </property>
+    <property name="text">
+     <string>0 A</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="voltage">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>750</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:green;
+qproperty-alignment: AlignCenter;
+border:4px solid #2f2f2f;</string>
+    </property>
+    <property name="text">
+     <string>0 V</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_60">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>760</y>
+      <width>291</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 25px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Voltage</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_65">
+    <property name="geometry">
+     <rect>
+      <x>238</x>
+      <y>0</y>
+      <width>200</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>System Tests</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_66">
+    <property name="geometry">
+     <rect>
+      <x>328</x>
+      <y>70</y>
+      <width>300</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Spacex Telemetry Check</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_67">
+    <property name="geometry">
+     <rect>
+      <x>458</x>
+      <y>0</y>
+      <width>300</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Launch</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_68">
+    <property name="geometry">
+     <rect>
+      <x>958</x>
+      <y>70</y>
+      <width>300</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Brakes</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_69">
+    <property name="geometry">
+     <rect>
+      <x>1210</x>
+      <y>70</y>
+      <width>300</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_70">
+    <property name="geometry">
+     <rect>
+      <x>1350</x>
+      <y>0</y>
+      <width>300</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Post-Launch Tests</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_71">
+    <property name="geometry">
+     <rect>
+      <x>1420</x>
+      <y>70</y>
+      <width>300</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Unload</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_9">
+    <property name="geometry">
+     <rect>
+      <x>334</x>
+      <y>30</y>
+      <width>8</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_10">
+    <property name="geometry">
+     <rect>
+      <x>474</x>
+      <y>59</y>
+      <width>8</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_11">
+    <property name="geometry">
+     <rect>
+      <x>1104</x>
+      <y>29</y>
+      <width>8</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_12">
+    <property name="geometry">
+     <rect>
+      <x>1566</x>
+      <y>58</y>
+      <width>8</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_13">
+    <property name="geometry">
+     <rect>
+      <x>1486</x>
+      <y>30</y>
+      <width>8</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_14">
+    <property name="geometry">
+     <rect>
+      <x>1354</x>
+      <y>58</y>
+      <width>8</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_15">
+    <property name="geometry">
+     <rect>
+      <x>604</x>
+      <y>30</y>
+      <width>8</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="battHealth">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>760</y>
+      <width>116</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{ background-image: url(C:/Program Files/Hyperloop/HyperloopBatteryBad.jpg);
+}
+QLabel[activated=true]{
+background-image: url(C:/Program Files/Hyperloop/HyperloopBattery.jpg);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_72">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>0</y>
+      <width>300</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+font-family:Monospace;
+font-weight:bold;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>State Estimation</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="telemetry">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>830</y>
+      <width>201</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 26px;
+font-family:Arial;
+text-align:center;
+font-weight: bold;
+color:white;
+background-color:red;
+qproperty-alignment: AlignCenter;
+border:2px solid black;
+QLabel[activated=true]{
+background-color:green;
+}</string>
+    </property>
+    <property name="text">
+     <string>Not Propelling</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>830</y>
+      <width>521</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 23px;
+font-family:Monospace;
+font-weight:;
+color:white;
+background-color:hsla(0,0,0,0);
+qproperty-alignment: AlignCenter;</string>
+    </property>
+    <property name="text">
+     <string>Telemetry Status</string>
+    </property>
+   </widget>
+   <zorder>progressBar</zorder>
+   <zorder>frame_9</zorder>
+   <zorder>label</zorder>
+   <zorder>frame</zorder>
+   <zorder>frame_2</zorder>
+   <zorder>progressBar_2</zorder>
+   <zorder>frame_3</zorder>
+   <zorder>progressBar_3</zorder>
+   <zorder>frame_4</zorder>
+   <zorder>frame_5</zorder>
+   <zorder>frameMain</zorder>
+   <zorder>stopButton</zorder>
+   <zorder>label_56</zorder>
+   <zorder>latency</zorder>
+   <zorder>bandwidth</zorder>
+   <zorder>label_54</zorder>
+   <zorder>label_57</zorder>
+   <zorder>current</zorder>
+   <zorder>voltage</zorder>
+   <zorder>label_60</zorder>
+   <zorder>label_65</zorder>
+   <zorder>label_66</zorder>
+   <zorder>label_67</zorder>
+   <zorder>label_68</zorder>
+   <zorder>label_69</zorder>
+   <zorder>label_70</zorder>
+   <zorder>label_71</zorder>
+   <zorder>frame_10</zorder>
+   <zorder>frame_11</zorder>
+   <zorder>frame_12</zorder>
+   <zorder>frame_13</zorder>
+   <zorder>frame_14</zorder>
+   <zorder>frame_15</zorder>
+   <zorder>battHealth</zorder>
+   <zorder>label_72</zorder>
+   <zorder>telemetry</zorder>
+   <zorder>label_19</zorder>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
