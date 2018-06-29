@@ -38,7 +38,7 @@ void MainWindow::setMotorTemperature(int value){
     std::string str=std::to_string(value)+" C";
     ui->motorTemp->setText(QString::fromUtf8(str.c_str()));
 }
-void MainWindow::setHighPressurePneumaticGuage(int value){
+void MainWindow::setHighPressurePneumaticGuage(int value){//what is this, objc?
     std::string str=std::to_string(value)+" PSI";
     ui->pneumaticHP->setText(QString::fromUtf8(str.c_str()));
 }
