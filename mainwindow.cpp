@@ -11,56 +11,116 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    MainWindow::plotInit();
 }
 void MainWindow::paintEvent(QPaintEvent*)
 {
+     double j=i+.5;
+
+     setVoltage(j);
+     setCurrent(j);
+     setAirPressure(j);
+     setBatteryTemperature(j);
+     setMotorTemperature(j);
+     setLowPressurePneumaticGuage(j);
+     setHighPressurePneumaticGuage(j);
+     setSpeed(j);
+     setBandwidth(j);
+     setLatency(j);
+     setStatus(std::to_string(i), lol);
+     setFrontLeftDAS(lol);
+     setFrontRightDAS(lol);
+     setRearLeftDAS(lol);
+     setRearRightDAS(lol);
+     setRearRightIMU(lol);
+     setRearRightVPS(lol);
+     setRearRightHPS(lol);
+     setBatteryHealth(lol);
+     setTelemetryStatus(lol);
+     setDataAcquisition(lol);
+     setAmbientPressureSensor(lol);
+     if (i<=333){
+        setProgression(0, (i*100)/333);
+     } else if (i<=666){
+        setProgression(1, (i-333)*100/333);
+     } else {
+         setProgression(2, (i-666)*100/333);
+     }
+     if (i%10==0){
+         plotAcceleration(j);
+         plotVelocity(j);
+     }
+    lol=i>500;
+    i++;
+    i%=1000;
+}
+void MainWindow::setVoltage(double value){
+    char  str[10];
+    snprintf(str, 7, "%f", value);
+    strcat(str, " V");
+    ui->voltage->setText(QString::fromUtf8(str));
+}
+void MainWindow::setAirPressure(double value){
+    char  str[12];
+    snprintf(str, 8, "%f", value);
+    strcat(str, " PSI");
+    ui->airPressure->setText(QString::fromUtf8(str));
+}
+void MainWindow::setCurrent(double value){
+    char  str[10];
+    snprintf(str, 7, "%f", value);
+    strcat(str, " A");
+
+    ui->current->setText(QString::fromUtf8(str));
+}
+void MainWindow::setBatteryTemperature(double value){
+    char  str[10];
+    snprintf(str, 8, "%f", value);
+    strcat(str, " C");
+
+    ui->batteryTemp->setText(QString::fromUtf8(str));
 
 }
-void MainWindow::setVoltage(int value){
-    std::string str=std::to_string(value)+" V";
-    ui->voltage->setText(QString::fromUtf8(str.c_str()));
-}
-void MainWindow::setAirPressure(int value){
-    std::string str=std::to_string(value)+" PSI";
-    ui->airPressure->setText(QString::fromUtf8(str.c_str()));
-}
-void MainWindow::setCurrent(int value){
-    std::string str=std::to_string(value)+" A";
-    ui->current->setText(QString::fromUtf8(str.c_str()));
-}
+void MainWindow::setMotorTemperature(double value){
+    char  str[10];
+    snprintf(str, 8, "%f", value);
+    strcat(str, " C");
 
-void MainWindow::setBatteryTemperature(int value){
-    std::string str=std::to_string(value)+" C";
-    ui->batteryTemp->setText(QString::fromUtf8(str.c_str()));
+    ui->motorTemp->setText(QString::fromUtf8(str));
+}
+void MainWindow::setHighPressurePneumaticGuage(double value){//what is this, objc?
+    char  str[12];
+    snprintf(str, 8, "%f", value);
+    strcat(str, " PSI");
 
+    ui->pneumaticHP->setText(QString::fromUtf8(str));
 }
-void MainWindow::setMotorTemperature(int value){
-    std::string str=std::to_string(value)+" C";
-    ui->motorTemp->setText(QString::fromUtf8(str.c_str()));
-}
-void MainWindow::setHighPressurePneumaticGuage(int value){//what is this, objc?
-    std::string str=std::to_string(value)+" PSI";
-    ui->pneumaticHP->setText(QString::fromUtf8(str.c_str()));
-}
-void MainWindow::setLowPressurePneumaticGuage(int value){
-    std::string str=std::to_string(value)+" PSI";
-    ui->pneumaticLP->setText(QString::fromUtf8(str.c_str()));
-}
-void MainWindow::setSpeed(int value){
+void MainWindow::setLowPressurePneumaticGuage(double value){
+    char  str[12];
+    snprintf(str, 8, "%f", value);
+    strcat(str, " PSI");
 
-    std::string str=std::to_string(value)+" mph";
-    ui->speed->setText(QString::fromUtf8(str.c_str()));
+    ui->pneumaticLP->setText(QString::fromUtf8(str));
 }
+void MainWindow::setSpeed(double value){
+    char  str[12];
+    snprintf(str, 7, "%f", value);
+    strcat(str, " mph");
 
-void MainWindow::setBandwidth(int value){
-
-    std::string str=std::to_string(value)+" mB/s";
-    ui->bandwidth->setText(QString::fromUtf8(str.c_str()));
+    ui->speed->setText(QString::fromUtf8(str));
 }
-void MainWindow::setLatency(int value){
+void MainWindow::setBandwidth(double value){
+    char  str[12];
+    snprintf(str, 7, "%f", value);
+    strcat(str, " mB/s");
+    ui->bandwidth->setText(QString::fromUtf8(str));
+}
+void MainWindow::setLatency(double value){
+    char  str[11];
+    snprintf(str, 8, "%f", value);
+    strcat(str, " ms");
 
-    std::string str=std::to_string(value)+" ms";
-    ui->latency->setText(QString::fromUtf8(str.c_str()));
+    ui->latency->setText(QString::fromUtf8(str));
 }
 /**
  * @brief MainWindow::setStatus
@@ -93,10 +153,19 @@ void MainWindow::setFrontLeftDAS(bool value){
             ui->frontLeft->style()->polish(ui->frontLeft);
         }
     }
-
+void MainWindow::setAmbientPressureSensor(bool value){
+    if (value){
+        ui->ambientPressureSensor->setProperty("activated","true");
+        ui->ambientPressureSensor->style()->unpolish(ui->ambientPressureSensor);
+        ui->ambientPressureSensor->style()->polish(ui->ambientPressureSensor);
+    } else {
+        ui->ambientPressureSensor->setProperty("activated","false");
+        ui->ambientPressureSensor->style()->unpolish(ui->ambientPressureSensor);
+        ui->ambientPressureSensor->style()->polish(ui->ambientPressureSensor);
+    }
+}
 void MainWindow::setFrontRightDAS(bool value){
     if (value){
-
         ui->frontRight->setText(QString::fromUtf8("Okay"));
         ui->frontRight->setProperty("activated","true");
         ui->frontRight->style()->unpolish(ui->frontRight);
@@ -123,7 +192,6 @@ void MainWindow::setRearLeftDAS(bool value){
         ui->rearLeft->style()->polish(ui->rearLeft);
     }
 }
-
 void MainWindow::setRearRightDAS(bool value){
     if (value){
 
@@ -138,7 +206,6 @@ void MainWindow::setRearRightDAS(bool value){
         ui->rearRight->style()->polish(ui->rearRight);
     }
 }
-
 void MainWindow::setRearRightIMU(bool value){
     if (value){
         ui->rearRightIMU->setProperty("activated","true");
@@ -219,18 +286,64 @@ void MainWindow::setDataAcquisition(bool value){
 */
 void MainWindow::setProgression(int section, double value){
     if (section==0){
+        ui->progressBar_3->setValue(0);
+        ui->progressBar_2->setValue(0);
         ui->progressBar->setValue(value);
     }
     else if (section==1){
+        ui->progressBar->setValue(100);
         ui->progressBar_2->setValue(value);
+        ui->progressBar_3->setValue(0);
     }
     else if (section==2){
+        ui->progressBar->setValue(100);
+        ui->progressBar_2->setValue(100);
         ui->progressBar_3->setValue(value);
     }
+    ui->progressBar->style()->unpolish(ui->progressBar);
+    ui->progressBar->style()->polish(ui->progressBar);
+    ui->progressBar_2->style()->unpolish(ui->progressBar_2);
+    ui->progressBar_2->style()->polish(ui->progressBar_2);
+    ui->progressBar_3->style()->unpolish(ui->progressBar_3);
+    ui->progressBar_3->style()->polish(ui->progressBar_3);
 }
+/**
+ * @brief Mainwindow::plotVelocity plot a value in the velocity graph
+ * @param velocity the value to be plotted
+ */
+void MainWindow::plotVelocity(double velocity){
+    static QTime time(QTime::currentTime());
+    double timePassed = time.elapsed()/1000.0;
+    ui->velPlot->graph(0)->addData(timePassed, velocity);
+    ui->velPlot->graph(0)->rescaleValueAxis();
+    ui->velPlot->xAxis->setRange(timePassed, 8, Qt::AlignRight);
+    ui->velPlot->replot();
+}
+void MainWindow::plotAcceleration(double acceleration){
+    static QTime time(QTime::currentTime());
+    double timePassed = time.elapsed()/1000.0;
+    ui->accPlot->graph(0)->addData(timePassed, acceleration);
+    ui->accPlot->graph(0)->rescaleValueAxis();
+    ui->accPlot->xAxis->setRange(timePassed, 8, Qt::AlignRight);
+    ui->accPlot->replot();
+}
+void MainWindow::plotInit(){
+    ui->velPlot->addGraph();
+    ui->velPlot->graph(0)->setPen(QPen(QColor(40, 110, 255)));
+    ui->velPlot->yAxis->setRange(0, 1000);
+    connect(ui->velPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), ui->velPlot->xAxis2, SLOT(setRange(QCPRange)));
+    connect(ui->velPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), ui->velPlot->yAxis2, SLOT(setRange(QCPRange)));
+    ui->velPlot->xAxis->setLabel("Time Elapsed (s)");
+    ui->velPlot->yAxis->setLabel("Velocity (m/s)");
 
-
-
+    ui->accPlot->addGraph();
+    ui->accPlot->graph(0)->setPen(QPen(QColor(40, 110, 255)));
+    ui->accPlot->yAxis->setRange(0, 1000);
+    connect(ui->accPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), ui->accPlot->xAxis2, SLOT(setRange(QCPRange)));
+    connect(ui->accPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), ui->accPlot->yAxis2, SLOT(setRange(QCPRange)));
+    ui->accPlot->xAxis->setLabel("Time Elapsed (s)");
+    ui->accPlot->yAxis->setLabel("Acceleration (m/s²)");
+}
 
 MainWindow::~MainWindow()
 {

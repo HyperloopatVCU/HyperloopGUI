@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1700</width>
-    <height>900</height>
+    <height>950</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -65,7 +65,7 @@ QLabel[activated=true] {
  }</string>
     </property>
     <property name="value">
-     <number>100</number>
+     <number>0</number>
     </property>
     <property name="textVisible">
      <bool>false</bool>
@@ -245,7 +245,7 @@ border-radius:7px;</string>
       <x>40</x>
       <y>120</y>
       <width>1620</width>
-      <height>581</height>
+      <height>651</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -263,7 +263,7 @@ border-radius:7px;</string>
        <x>547</x>
        <y>30</y>
        <width>519</width>
-       <height>511</height>
+       <height>591</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -359,7 +359,7 @@ qproperty-alignment: AlignCenter;</string>
        <string>Front-Right DAS</string>
       </property>
      </widget>
-     <widget class="QLabel" name="frontRight">
+     <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
         <x>-100</x>
@@ -432,7 +432,7 @@ qproperty-alignment: AlignCenter;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size: 26px;
+       <string notr="true">QLabel { font-size: 26px;
 font-family:Arial;
 text-align:center;
 font-weight: bold;
@@ -440,6 +440,7 @@ color:white;
 background-color:red;
 qproperty-alignment: AlignCenter;
 border:2px solid black;
+}
 QLabel[activated=true]{
 background-color: green;
 }</string>
@@ -458,7 +459,7 @@ background-color: green;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size: 26px;
+       <string notr="true">QLabel { font-size: 26px;
 font-family:Arial;
 text-align:center;
 font-weight: bold;
@@ -466,6 +467,7 @@ color:white;
 background-color:red;
 qproperty-alignment: AlignCenter;
 border:2px solid black;
+}
 QLabel[activated=true]{
 background-color: green;
 }</string>
@@ -474,7 +476,7 @@ background-color: green;
        <string>Error</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_13">
+     <widget class="QLabel" name="frontRight">
       <property name="geometry">
        <rect>
         <x>335</x>
@@ -484,7 +486,7 @@ background-color: green;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size: 26px;
+       <string notr="true">QLabel { font-size: 26px;
 font-family:Arial;
 text-align:center;
 font-weight: bold;
@@ -492,6 +494,7 @@ color:white;
 background-color:red;
 qproperty-alignment: AlignCenter;
 border:2px solid black;
+}
 QLabel[activated=true]{
 background-color: green;
 }</string>
@@ -510,7 +513,7 @@ background-color: green;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size: 26px;
+       <string notr="true">QLabel { font-size: 26px;
 font-family:Arial;
 text-align:center;
 font-weight: bold;
@@ -518,6 +521,7 @@ color:white;
 background-color:red;
 qproperty-alignment: AlignCenter;
 border:2px solid black;
+}
 QLabel[activated=true]{
 background-color: green;
 }</string>
@@ -536,7 +540,7 @@ background-color: green;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size: 26px;
+       <string notr="true">QLabel { font-size: 26px;
 font-family:Arial;
 text-align:center;
 font-weight: bold;
@@ -544,6 +548,7 @@ color:white;
 background-color:red;
 qproperty-alignment: AlignCenter;
 border:2px solid black;
+}
 QLabel[activated=true]{
 background-color: green;
 }</string>
@@ -555,19 +560,21 @@ background-color: green;
      <widget class="QLabel" name="rearRightVPS">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>340</y>
+        <x>110</x>
+        <y>350</y>
         <width>391</width>
         <height>32</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size: 23px;
+       <string notr="true">QLabel { 
+font-size: 23px;
 font-family:Monospace;
 font-weight:;
 color:red;
 background-color:hsla(0,0,0,0);
 qproperty-alignment: AlignLeft;
+}
 QLabel[activated=true]{
 color:darkgreen;
 }</string>
@@ -579,19 +586,21 @@ color:darkgreen;
      <widget class="QLabel" name="rearRightIMU">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>380</y>
+        <x>110</x>
+        <y>400</y>
         <width>391</width>
         <height>32</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size: 23px;
+       <string notr="true">QLabel { 
+font-size: 23px;
 font-family:Monospace;
 font-weight:;
 color:red;
 background-color:hsla(0,0,0,0);
 qproperty-alignment: AlignLeft;
+}
 QLabel[activated=true]{
 color:darkgreen;
 }</string>
@@ -603,19 +612,21 @@ color:darkgreen;
      <widget class="QLabel" name="rearRightHPS">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>420</y>
+        <x>110</x>
+        <y>450</y>
         <width>391</width>
         <height>32</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size: 23px;
+       <string notr="true">QLabel { 
+font-size: 23px;
 font-family:Monospace;
 font-weight:;
 color:red;
 background-color:hsla(0,0,0,0);
 qproperty-alignment: AlignLeft;
+}
 QLabel[activated=true]{
 color:darkgreen;
 }</string>
@@ -627,19 +638,21 @@ color:darkgreen;
      <widget class="QLabel" name="ambientPressureSensor">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>460</y>
+        <x>110</x>
+        <y>500</y>
         <width>391</width>
         <height>32</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size: 23px;
+       <string notr="true">QLabel { 
+font-size: 23px;
 font-family:Monospace;
 font-weight:;
 color:red;
 background-color:hsla(0,0,0,0);
 qproperty-alignment: AlignLeft;
+}
 QLabel[activated=true]{
 color:darkgreen;
 }</string>
@@ -981,12 +994,32 @@ background-color: green;
       <string>Stationary</string>
      </property>
     </widget>
+    <widget class="QCustomPlot" name="velPlot" native="true">
+     <property name="geometry">
+      <rect>
+       <x>1090</x>
+       <y>30</y>
+       <width>491</width>
+       <height>261</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QCustomPlot" name="accPlot" native="true">
+     <property name="geometry">
+      <rect>
+       <x>1090</x>
+       <y>320</y>
+       <width>491</width>
+       <height>301</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QPushButton" name="stopButton">
     <property name="geometry">
      <rect>
-      <x>1420</x>
-      <y>720</y>
+      <x>1450</x>
+      <y>780</y>
       <width>161</width>
       <height>161</height>
      </rect>
@@ -1007,8 +1040,8 @@ border:2px solid #1f1f1f;</string>
    <widget class="QLabel" name="label_56">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>810</y>
+      <x>950</x>
+      <y>860</y>
       <width>291</width>
       <height>32</height>
      </rect>
@@ -1028,8 +1061,8 @@ qproperty-alignment: AlignCenter;</string>
    <widget class="QLabel" name="latency">
     <property name="geometry">
      <rect>
-      <x>1160</x>
-      <y>810</y>
+      <x>1180</x>
+      <y>860</y>
       <width>181</width>
       <height>32</height>
      </rect>
@@ -1051,8 +1084,8 @@ border:4px solid gray;</string>
    <widget class="QLabel" name="bandwidth">
     <property name="geometry">
      <rect>
-      <x>1160</x>
-      <y>760</y>
+      <x>1180</x>
+      <y>810</y>
       <width>181</width>
       <height>32</height>
      </rect>
@@ -1074,8 +1107,8 @@ border:4px solid gray;</string>
    <widget class="QLabel" name="label_54">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>760</y>
+      <x>950</x>
+      <y>810</y>
       <width>291</width>
       <height>32</height>
      </rect>
@@ -1095,8 +1128,8 @@ qproperty-alignment: AlignCenter;</string>
    <widget class="QLabel" name="label_57">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>830</y>
+      <x>290</x>
+      <y>880</y>
       <width>291</width>
       <height>32</height>
      </rect>
@@ -1116,8 +1149,8 @@ qproperty-alignment: AlignCenter;</string>
    <widget class="QLabel" name="current">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>820</y>
+      <x>230</x>
+      <y>870</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -1139,8 +1172,8 @@ border:4px solid #2f2f2f;</string>
    <widget class="QLabel" name="voltage">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>750</y>
+      <x>230</x>
+      <y>800</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -1162,8 +1195,8 @@ border:4px solid #2f2f2f;</string>
    <widget class="QLabel" name="label_60">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>760</y>
+      <x>290</x>
+      <y>810</y>
       <width>291</width>
       <height>32</height>
      </rect>
@@ -1473,8 +1506,8 @@ qproperty-alignment: AlignCenter;</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>760</y>
+      <x>50</x>
+      <y>810</y>
       <width>116</width>
       <height>91</height>
      </rect>
@@ -1517,23 +1550,24 @@ qproperty-alignment: AlignCenter;</string>
    <widget class="QLabel" name="telemetry">
     <property name="geometry">
      <rect>
-      <x>770</x>
-      <y>830</y>
+      <x>790</x>
+      <y>835</y>
       <width>201</width>
       <height>32</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font-size: 26px;
+     <string notr="true">QLabel { font-size: 26px;
 font-family:Arial;
 text-align:center;
 font-weight: bold;
 color:white;
 background-color:red;
 qproperty-alignment: AlignCenter;
-border:2px solid black;
+border:2px solid #2f2f2f;
+}
 QLabel[activated=true]{
-background-color:green;
+background-color: green;
 }</string>
     </property>
     <property name="text">
@@ -1543,8 +1577,8 @@ background-color:green;
    <widget class="QLabel" name="label_19">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>830</y>
+      <x>410</x>
+      <y>835</y>
       <width>521</width>
       <height>32</height>
      </rect>
@@ -1601,6 +1635,14 @@ qproperty-alignment: AlignCenter;</string>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -15,17 +15,16 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void paintEvent(QPaintEvent *);
-    void setVoltage(int value);
-    void setCurrent(int value);
-    void setAirPressure(int value);
-    void setStatus(bool value);
-    void setBatteryTemperature(int value);
-    void setMotorTemperature(int value);
-    void setLowPressurePneumaticGuage(int value);
-    void setHighPressurePneumaticGuage(int value);
-    void setSpeed(int value);
-    void setBandwidth(int value);
-    void setLatency(int value);
+    void setVoltage(double value);
+    void setCurrent(double value);
+    void setAirPressure(double value);
+    void setBatteryTemperature(double value);
+    void setMotorTemperature(double value);
+    void setLowPressurePneumaticGuage(double value);
+    void setHighPressurePneumaticGuage(double value);
+    void setSpeed(double value);
+    void setBandwidth(double value);
+    void setLatency(double value);
     void setStatus(std::string value, bool color);
     void setFrontLeftDAS(bool value);
     void setFrontRightDAS(bool value);
@@ -38,10 +37,14 @@ public:
     void setTelemetryStatus(bool value);
     void setDataAcquisition(bool value);
     void setProgression(int section, double value);
+    void setAmbientPressureSensor(bool value);
+    void plotVelocity(double velocity);
+    void plotAcceleration(double acceleration);
 
 private slots:
     void on_stopButton_clicked();
 
+    void plotInit();
 private:
     Ui::MainWindow *ui;
 };
