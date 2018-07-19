@@ -1,0 +1,19 @@
+{
+    "voltage" : 1.0,
+    "current" : 1.0,
+    "battery_temp" : 1.0,
+    "motor_temp" : 1.0,
+    "controller_temp" : 1.0,
+    "position" : 1.0,
+    "velocity" : 1.0,
+    "acceleration" : 1.0,
+    "state" : "StartUp",
+    "EMS_1" : true,
+    "EMS_2" : true,
+    "EMS_3" : true,
+    "EMS_4" : true,
+    "IMU" : true,
+    "VPS" : true,
+    "HPS" : true,
+    "BMS" : true
+}

@@ -3,8 +3,10 @@
 #include <QPainter>
 #include <QLineF>
 #include <QStyle>
-int i=0;
-bool lol=true;
+#include <QJsonDocument>
+#include <QJsonObject>
+
+bool lol = false;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,58 +17,72 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 void MainWindow::paintEvent(QPaintEvent*)
 {
-     double j=i+.5;
+    QString settings;
+    QFile file;
+    QJsonDocument doc;
+    QJsonObject obj;
 
-     setVoltage(j);
-     setCurrent(j);
-     setAirPressure(j);
-     setBatteryTemperature(j);
-     setMotorTemperature(j);
-     setLowPressurePneumaticGuage(j);
-     setHighPressurePneumaticGuage(j);
-     setSpeed(j);
-     setBandwidth(j);
-     setLatency(j);
-     setStatus(std::to_string(i), lol);
+    file.setFileName("/home/johannes/Repos/HyperloopGUI/config.json");
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    settings = file.readAll();
+    file.close();
+
+    doc = QJsonDocument::fromJson(settings.toUtf8());
+
+    if (doc.isObject()) {
+        obj = doc.object();
+    } else {
+        qDebug() << "Document is not an object" << endl;
+        return;
+    }
+
+     setVoltage(obj.take(QString("voltage")).toDouble());
+     setCurrent(obj.take(QString("current")).toDouble());
+     setBatteryTemperature(obj.take(QString("battery_temp")).toDouble());
+     setMotorTemperature(obj.take(QString("motor_temp")).toDouble());
+     setControllerTemperature(obj.take(QString("controller_temp")).toDouble());
+     setSpeed(obj.take(QString("velocity")).toDouble());
+     setStatus(obj.take(QString("State")).toString().toStdString(), lol);
      setFrontLeftDAS(lol);
      setFrontRightDAS(lol);
      setRearLeftDAS(lol);
      setRearRightDAS(lol);
-     setRearRightIMU(lol);
-     setRearRightVPS(lol);
-     setRearRightHPS(lol);
+     setIMU(lol);
+     setVPS(lol);
+     setHPS(lol);
      setBatteryHealth(lol);
-     setTelemetryStatus(lol);
      setDataAcquisition(lol);
-     setAmbientPressureSensor(lol);
-     if (i<=333){
-        setProgression(0, (i*100)/333);
-     } else if (i<=666){
-        setProgression(1, (i-333)*100/333);
+
+     /*
+     if (j<=333){
+        setProgression(0, (j*100)/333);
+     } else if (j<=666){
+        setProgression(1, (j-333)*100/333);
      } else {
-         setProgression(2, (i-666)*100/333);
+        setProgression(2, (j-666)*100/333);
      }
-     if (i%10==0){
-         plotAcceleration(j);
-         plotVelocity(j);
-     }
-    lol=i>500;
-    i++;
-    i%=1000;
+
+     */
+     plotAcceleration(obj.take(QString("acceleration")).toDouble());
+     plotPosition(obj.take(QString("position")).toDouble());
+
 }
 void MainWindow::setVoltage(double value){
+
+    if (value == ui->voltage->text().toDouble())
+        return;
+
     char  str[10];
     snprintf(str, 7, "%f", value);
     strcat(str, " V");
     ui->voltage->setText(QString::fromUtf8(str));
 }
-void MainWindow::setAirPressure(double value){
-    char  str[12];
-    snprintf(str, 8, "%f", value);
-    strcat(str, " PSI");
-    ui->airPressure->setText(QString::fromUtf8(str));
-}
+
 void MainWindow::setCurrent(double value){
+
+    if (value == ui->current->text().toDouble())
+        return;
+
     char  str[10];
     snprintf(str, 7, "%f", value);
     strcat(str, " A");
@@ -74,6 +90,10 @@ void MainWindow::setCurrent(double value){
     ui->current->setText(QString::fromUtf8(str));
 }
 void MainWindow::setBatteryTemperature(double value){
+
+    if (value == ui->batteryTemp->text().toDouble())
+        return;
+
     char  str[10];
     snprintf(str, 8, "%f", value);
     strcat(str, " C");
@@ -82,52 +102,51 @@ void MainWindow::setBatteryTemperature(double value){
 
 }
 void MainWindow::setMotorTemperature(double value){
+
+    if (value == ui->motorTemp->text().toDouble())
+        return;
+
     char  str[10];
     snprintf(str, 8, "%f", value);
     strcat(str, " C");
 
     ui->motorTemp->setText(QString::fromUtf8(str));
 }
-void MainWindow::setHighPressurePneumaticGuage(double value){//what is this, objc?
-    char  str[12];
-    snprintf(str, 8, "%f", value);
-    strcat(str, " PSI");
 
-    ui->pneumaticHP->setText(QString::fromUtf8(str));
-}
-void MainWindow::setLowPressurePneumaticGuage(double value){
-    char  str[12];
-    snprintf(str, 8, "%f", value);
-    strcat(str, " PSI");
+void MainWindow::setControllerTemperature(double value){
 
-    ui->pneumaticLP->setText(QString::fromUtf8(str));
+    if (value == ui->controllerTemp->text().toDouble())
+        return;
+
+    char  str[10];
+    snprintf(str, 8, "%f", value);
+    strcat(str, " C");
+
+    ui->controllerTemp->setText(QString::fromUtf8(str));
 }
+
 void MainWindow::setSpeed(double value){
+
+    if (value == ui->speed->text().toDouble())
+        return;
+
     char  str[12];
     snprintf(str, 7, "%f", value);
     strcat(str, " mph");
 
     ui->speed->setText(QString::fromUtf8(str));
 }
-void MainWindow::setBandwidth(double value){
-    char  str[12];
-    snprintf(str, 7, "%f", value);
-    strcat(str, " mB/s");
-    ui->bandwidth->setText(QString::fromUtf8(str));
-}
-void MainWindow::setLatency(double value){
-    char  str[11];
-    snprintf(str, 8, "%f", value);
-    strcat(str, " ms");
 
-    ui->latency->setText(QString::fromUtf8(str));
-}
 /**
  * @brief MainWindow::setStatus
  * @param value the string value
  * @param color true: green, red: false
  */
 void MainWindow::setStatus(std::string value, bool color){
+
+    if (value == ui->status->text().toStdString())
+        return;
+
     ui->status->setText(QString::fromUtf8(value.c_str()));
     if (color){
         ui->status->setProperty("activated","true");
@@ -140,31 +159,29 @@ void MainWindow::setStatus(std::string value, bool color){
     }
 }
 void MainWindow::setFrontLeftDAS(bool value){
-        if (value){
 
-            ui->frontLeft->setText(QString::fromUtf8("Okay"));
-            ui->frontLeft->setProperty("activated","true");
-            ui->frontLeft->style()->unpolish(ui->frontLeft);
-            ui->frontLeft->style()->polish(ui->frontLeft);
-        } else {
-            ui->frontLeft->setText(QString::fromUtf8("Error"));
-            ui->frontLeft->setProperty("activated","false");
-            ui->frontLeft->style()->unpolish(ui->frontLeft);
-            ui->frontLeft->style()->polish(ui->frontLeft);
-        }
-    }
-void MainWindow::setAmbientPressureSensor(bool value){
+    if (value == ui->frontLeft->property("activated"))
+        return;
+
     if (value){
-        ui->ambientPressureSensor->setProperty("activated","true");
-        ui->ambientPressureSensor->style()->unpolish(ui->ambientPressureSensor);
-        ui->ambientPressureSensor->style()->polish(ui->ambientPressureSensor);
+
+        ui->frontLeft->setText(QString::fromUtf8("Okay"));
+        ui->frontLeft->setProperty("activated","true");
+        ui->frontLeft->style()->unpolish(ui->frontLeft);
+        ui->frontLeft->style()->polish(ui->frontLeft);
     } else {
-        ui->ambientPressureSensor->setProperty("activated","false");
-        ui->ambientPressureSensor->style()->unpolish(ui->ambientPressureSensor);
-        ui->ambientPressureSensor->style()->polish(ui->ambientPressureSensor);
+        ui->frontLeft->setText(QString::fromUtf8("Error"));
+        ui->frontLeft->setProperty("activated","false");
+        ui->frontLeft->style()->unpolish(ui->frontLeft);
+        ui->frontLeft->style()->polish(ui->frontLeft);
     }
 }
+
 void MainWindow::setFrontRightDAS(bool value){
+
+    if (value == ui->frontRight->property("activated"))
+        return;
+
     if (value){
         ui->frontRight->setText(QString::fromUtf8("Okay"));
         ui->frontRight->setProperty("activated","true");
@@ -179,6 +196,10 @@ void MainWindow::setFrontRightDAS(bool value){
 
 }
 void MainWindow::setRearLeftDAS(bool value){
+
+    if (value == ui->rearLeft->property("activated"))
+        return;
+
     if (value){
 
         ui->rearLeft->setText(QString::fromUtf8("Okay"));
@@ -193,6 +214,10 @@ void MainWindow::setRearLeftDAS(bool value){
     }
 }
 void MainWindow::setRearRightDAS(bool value){
+
+    if (value == ui->rearRight->property("activated"))
+        return;
+
     if (value){
 
         ui->rearRight->setText(QString::fromUtf8("Okay"));
@@ -206,7 +231,11 @@ void MainWindow::setRearRightDAS(bool value){
         ui->rearRight->style()->polish(ui->rearRight);
     }
 }
-void MainWindow::setRearRightIMU(bool value){
+void MainWindow::setIMU(bool value){
+
+    if (value == ui->rearRightIMU->property("activated"))
+        return;
+
     if (value){
         ui->rearRightIMU->setProperty("activated","true");
         ui->rearRightIMU->style()->unpolish(ui->rearRightIMU);
@@ -217,7 +246,11 @@ void MainWindow::setRearRightIMU(bool value){
         ui->rearRightIMU->style()->polish(ui->rearRightIMU);
     }
 }
-void MainWindow::setRearRightVPS(bool value){
+void MainWindow::setVPS(bool value){
+
+    if (value == ui->rearRightVPS->property("activated"))
+        return;
+
     if (value){
         ui->rearRightVPS->setProperty("activated","true");
         ui->rearRightVPS->style()->unpolish(ui->rearRightVPS);
@@ -228,7 +261,11 @@ void MainWindow::setRearRightVPS(bool value){
         ui->rearRightVPS->style()->polish(ui->rearRightVPS);
     }
 }
-void MainWindow::setRearRightHPS(bool value){
+void MainWindow::setHPS(bool value){
+
+    if (value == ui->rearRightHPS->property("activated"))
+        return;
+
     if (value){
         ui->rearRightHPS->setProperty("activated","true");
         ui->rearRightHPS->style()->unpolish(ui->rearRightHPS);
@@ -250,22 +287,12 @@ void MainWindow::setBatteryHealth(bool value){
         ui->battHealth->style()->polish(ui->battHealth);
     }
 }
-void MainWindow::setTelemetryStatus(bool value){
 
-    if (value){
-
-        ui->telemetry->setText(QString::fromUtf8("Propelling"));
-        ui->telemetry->setProperty("activated","true");
-        ui->telemetry->style()->unpolish(ui->telemetry);
-        ui->telemetry->style()->polish(ui->telemetry);
-    } else {
-        ui->telemetry->setText(QString::fromUtf8("Not Propelling"));
-        ui->telemetry->setProperty("activated","false");
-        ui->telemetry->style()->unpolish(ui->telemetry);
-        ui->telemetry->style()->polish(ui->telemetry);
-    }
-}
 void MainWindow::setDataAcquisition(bool value){
+
+    if (value == ui->dataAcq->property("activated"))
+        return;
+
     if (value){
 
         ui->dataAcq->setText(QString::fromUtf8("Okay"));
@@ -311,10 +338,10 @@ void MainWindow::setProgression(int section, double value){
  * @brief Mainwindow::plotVelocity plot a value in the velocity graph
  * @param velocity the value to be plotted
  */
-void MainWindow::plotVelocity(double velocity){
+void MainWindow::plotPosition(double position){
     static QTime time(QTime::currentTime());
     double timePassed = time.elapsed()/1000.0;
-    ui->velPlot->graph(0)->addData(timePassed, velocity);
+    ui->velPlot->graph(0)->addData(timePassed, position);
     ui->velPlot->graph(0)->rescaleValueAxis();
     ui->velPlot->xAxis->setRange(timePassed, 8, Qt::AlignRight);
     ui->velPlot->replot();
